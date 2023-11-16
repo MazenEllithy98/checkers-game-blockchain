@@ -3,6 +3,8 @@ package alice.checkers.checkers;
 
 import "gogoproto/gogo.proto";
 import "checkers/params.proto";
+import "checkers/system_info.proto";
+import "checkers/stored_game.proto";
 // this line is used by starport scaffolding # genesis/proto/import
 
 option go_package = "github.com/alice/checkers/x/checkers/types";
@@ -10,5 +12,7 @@ option go_package = "github.com/alice/checkers/x/checkers/types";
 // GenesisState defines the checkers module's genesis state.
 message GenesisState {
   Params params = 1 [(gogoproto.nullable) = false];
+  SystemInfo systemInfo = 2 [(gogoproto.nullable) = false];
+  repeated StoredGame storedGameList = 3 [(gogoproto.nullable) = false];
   // this line is used by starport scaffolding # genesis/proto/state
 }
